@@ -8,7 +8,7 @@
     <body>
         <br/><br/>
         <div class="container">
-            <h2 id="main_title" align="center">Puntos de Monitoreo | Rio Rocha 2018</h2>
+            <h2 id="main_title" align="center">Puntos de Monitoreo Fundación Gaia Pacha | Rio Rocha 2018</h2>
             <br/>
             <div>
             <div id="div_left" align="left">
