@@ -45,6 +45,7 @@ while ($row = @mysqli_fetch_assoc($result1)){
                 <th style='border-left: 10px solid white'>Color</th>
                 <th style='border: 10px solid white'>Significado</th>
             </tr>";
+            
   // Add to XML document node
   $node = $dom->createElement("marker");
   $newnode = $parnode->appendChild($node);
