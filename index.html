@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <style>
+      #map {
+        height: 800px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      
+      /*
+       * GOOGLE MAPS
+       */
+      var map;
+      
+      function addMarker(map, position, content){
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map
+        });
+        
+        var infoWindow = new google.maps.InfoWindow({
+            content: content
+        });
+        
+        marker.addListener("click", function(){
+            infoWindow.open(map, marker);
+        });
+      }
+      function initMap() {
+        //var posicion = {lat: -17.374979, lng: -66.131331};
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: {lat: -17.393339, lng: -66.180482}
+          
+        });
+        var posicion1 = {lat: -17.374979, lng: -66.131331};
+        var posicion2 = {lat: -17.387925, lng: -66.164950};
+        var posicion3 = {lat: -17.411623, lng: -66.231694};
+        var contenido = "<h3 class='titulo'>Punto Puente Siles</h3>" + 
+                      "<h4>Muestras</h4>" +
+                        "<table><tr><th>Fecha</th><th>Valor</th><th>Clase</th><th>Indicador</th></tr>" +
+                        "<tr><td>19/05/2018</td><td>5</td><td>5</td><td style='background-color: red'></td></tr>" +
+                        "<tr><td>12/05/2018</td><td>6</td><td>5</td><td style='background-color: red'></td></tr></table>" +
+                        "<br/><a href='http://www.gaiapacha.org'>Ver Trabajo de Campo</a>";
+        addMarker(map, posicion1, contenido);
+        addMarker(map, posicion2, contenido);
+        addMarker(map, posicion3, contenido);
+        
+        
+        /*
+         *
+         */
+        /*var marker1 = new google.maps.Marker({
+            position: {lat: -17.374979, lng: -66.131331},
+            map: map
+        });
+        var marker2 = new google.maps.Marker({
+            position: {lat: -17.387925, lng: -66.164950},
+            map: map
+        });
+        var marker3 = new google.maps.Marker({
+            position: {lat: -17.411623, lng: -66.231694},
+            map: map
+        });
+        
+        var infoWindow1 = new google.maps.InfoWindow({
+            content: "<h3 class='titulo'>Punto Puente Siles</h3>" + 
+                      "<h4>Muestras</h4>" +
+                        "<table><tr><th>Fecha</th><th>Valor</th><th>Clase</th><th>Indicador</th></tr>" +
+                        "<tr><td>19/05/2018</td><td>5</td><td>5</td><td style='background-color: red'></td></tr>" +
+                        "<tr><td>12/05/2018</td><td>6</td><td>5</td><td style='background-color: red'></td></tr></table>" +
+                        "<br/><a href='http://www.gaiapacha.org'>Ver Trabajo de Campo</a>"
+        });
+        
+        marker1.addListener("click", function(){
+            infoWindow1.open(map, marker1);
+        });
+        
+        var infoWindow2 = new google.maps.InfoWindow({
+            content: "<h3 class='titulo'>Punto Puente Cobija</h3>" + 
+                      "<h4>Muestras</h4>" +
+                        "<div id='folder_table' class='table-responsive'><table style='text-align: center'><tr><th>Fecha</th><th>Valor</th><th>Clase</th><th>Indicador</th></tr>" +
+                        "<tr><td>19/05/2018</td><td>2</td><td>5</td><td style='background-color: red'></td></tr></table>" + 
+                        "</div><br/><a href='http://www.gaiapacha.org'>Ver Trabajo de Campo</a>"
+        });
+        
+        marker2.addListener("click", function(){
+            infoWindow2.open(map, marker2);
+        });
+        
+        var infoWindow3 = new google.maps.InfoWindow({
+            content: "<h4 class='titulo'>Punto Colcapirhua</h4>" + 
+                      "<h5>Muestras</h5>" +
+                        "<div id='folder_table' class='table-responsive'><table style='text-align: center;'><tr><th>Fecha</th><th>Valor</th><th>Clase</th><th>Indicador</th></tr>" +
+                        "<tr><td>19/05/2018</td><td>2</td><td>5</td><td style='background-color: red'></td></tr></table>" + 
+                        "</div><br/><a href='http://www.gaiapacha.org'>Ver Trabajo de Campo</a>"
+        });
+        
+        marker3.addListener("click", function(){
+          infoWindow3.open(map, marker3);
+        });*/
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGFnz8Rdnr43gMZtVGrO7h4eqIKrj-v2s&callback=initMap"
+    async defer></script>
+  </body>
+</html>
