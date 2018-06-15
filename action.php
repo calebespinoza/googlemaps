@@ -29,7 +29,7 @@ if(isset($_POST["action"])){
                             </tr>";
             }
         } else {
-            echo "No hay puntos de monitoreo.";
+            echo "No hay puntos de monitoreo!.";
             exit;
         }
         $output .= "</table>";

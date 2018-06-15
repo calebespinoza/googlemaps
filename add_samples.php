@@ -1,5 +1,7 @@
 <?php
 
+//Conectando con la base de datos
+
 require("phpsqlajax_dbinfo.php");
 
 if(isset($_POST["hidden_marker_id"])){
